@@ -6,7 +6,7 @@ const msalConfig = {
   auth: {
     clientId: '63673e5e-9e45-4bb2-88d5-5a8ed80c4f33', // your Application (client) ID
     authority: 'https://login.microsoftonline.com/b4948e23-f234-4650-9b05-fa1f63e1e6fe', // your Tenant ID
-    redirectUri: 'http://localhost:5173', // must exactly match Entra's registered redirect URI
+    redirectUri: 'https://sharepoint-rho.vercel.app', // must exactly match Entra's registered redirect URI
   },
 }
 
@@ -56,7 +56,8 @@ function App() {
     <div className="page">
       <header>
         <div className="brand">
-          <img className="brand-logo" src="/images/logo-m.png" alt="Kelson Innovations" />
+          <span className="brand-mark" aria-hidden="true">↗</span>
+          Client workspace
         </div>
         <div className="secure">Secure document access</div>
       </header>
@@ -65,17 +66,17 @@ function App() {
         <section className="content" aria-labelledby="page-title">
           <p className="eyebrow">Your shared workspace</p>
           <h1 id="page-title">Everything you need, in one place.</h1>
+          <p className="intro">
+            Use the button below to open your shared SharePoint workspace.
+            Sign-in is securely handled by Microsoft.
+          </p>
+          <div className="actions">
+            <button className="button" onClick={handleSignIn}>
+              Open SharePoint <span className="arrow" aria-hidden="true">→</span>
+            </button>
+            <span className="note">You may be asked to verify your identity.</span>
+          </div>
         </section>
-        <div className="visual" aria-hidden="true">
-          <span className="visual-ring visual-ring-one" />
-          <span className="visual-ring visual-ring-two" />
-          <img className="title-logo" src="/images/logo-title.png" alt="" />
-        </div>
-        <div className="actions">
-          <button className="button" onClick={handleSignIn}>
-            Open SharePoint
-          </button>
-        </div>
       </main>
 
       <footer>
