@@ -65,6 +65,7 @@ function App() {
         <section className="content" aria-labelledby="page-title">
           <p className="eyebrow">Your shared workspace</p>
           <h1 id="page-title">Everything you need, in one place.</h1>
+          <p className="intro">You will be required to login to your Microsoft account</p>
         </section>
         <div className="visual" aria-hidden="true">
           <span className="visual-ring visual-ring-one" />
